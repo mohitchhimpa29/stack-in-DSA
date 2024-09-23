@@ -1,0 +1,96 @@
+#include<iostream>
+using namespace std;
+
+class twostack{
+    int *arr;
+    int top1;
+    int top2;
+    int size;
+
+    public:
+
+    twostack(int size){
+        this->size=size;
+        top1=-1;
+        top2=size;
+        arr = new int [size];
+
+    }
+
+    void push1(int val){
+        if(top1==top2-1){
+            cout << "overflow"<< endl;
+        }
+        else{
+            top1++;
+            arr[top1]=val;
+        }
+    }
+    
+
+    void push2(int val){
+        if(top1==top2-1){
+            cout << "overflow"<< endl;
+        }
+        else{
+            top2--;
+            arr[top2]=val;
+        }
+    }
+   
+
+    void pop1(){
+        if(top1==-1){
+            cout << "underflow" << endl;
+        }
+        else{
+            top1--;
+        }
+    }
+    void pop2(){
+        if(top2==size){
+            cout << "underflow" << endl;
+        }
+        else{
+            top2++;
+        }
+    }
+
+     int peek1() {
+        if (top1 == -1) {
+            cout << "Stack 1 is empty" << endl;
+            return -1; 
+        }
+        return arr[top1];
+    }
+
+    int peek2() {
+        if (top2 == size) {
+            cout << "Stack 2 is empty" << endl;
+            return -1;
+        }
+        return arr[top2];
+    }
+};
+int main()
+{
+    twostack ts(6);
+    ts.push1(4);
+    ts.push1(6);
+    ts.push1(8);
+    ts.push1(9);
+    ts.pop1();
+    cout << ts.peek1() << endl;
+    ts.push2(94);
+    ts.push2(55);
+    ts.pop2();
+    cout << ts.peek2() << endl;
+    ts.pop2();
+    cout << ts.peek2() << endl;
+    ts.pop2();
+    cout << ts.peek2() << endl;
+
+     
+
+return 0;
+}

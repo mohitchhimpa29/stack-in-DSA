@@ -50,7 +50,9 @@ class stack{
             cout << "stack is not empty" << endl;
         }
     }
-
+int issize(){
+   return top+1;
+}
     
 };
 int main()
@@ -60,6 +62,7 @@ int main()
     st.push(54);
     st.push(27);
     st.push(52);
+    cout  <<st.issize() << endl ;
     st.pop();
     cout  <<st.peek() << endl ;
     st.isempty();

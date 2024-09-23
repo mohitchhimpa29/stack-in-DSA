@@ -50,11 +50,11 @@ class stack{
             cout << "stack is not empty" << endl;
         }
     }
-int issize(){
-   return top+1;
-}
-    
-};
+    int issize(){
+        return top+1;
+        }
+
+    };
 int main()
 {
     stack st(6);
